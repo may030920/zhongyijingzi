@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2970" height="4200" viewBox="0 0 2970 4200" role="img" aria-labelledby="title desc">
+<title id="title">中医镜子 A3 展示海报</title>
+<desc id="desc">一张用于比赛展示的 A3 比例海报，突出视觉加语音、晨起照镜子、行动建议和打卡闭环。</desc>
+<defs>
+  <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0%" stop-color="#fcf7ef"/>
+    <stop offset="55%" stop-color="#f3eadc"/>
+    <stop offset="100%" stop-color="#ede2d1"/>
+  </linearGradient>
+  <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0%" stop-color="#7d6247"/>
+    <stop offset="100%" stop-color="#b88a54"/>
+  </linearGradient>
+  <linearGradient id="jade" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0%" stop-color="#4f7a72"/>
+    <stop offset="100%" stop-color="#86b3a6"/>
+  </linearGradient>
+  <linearGradient id="darkPanel" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0%" stop-color="#25373f"/>
+    <stop offset="100%" stop-color="#3f3026"/>
+  </linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="26" stdDeviation="36" flood-color="#4f3820" flood-opacity="0.14"/>
+  </filter>
+</defs>
+
+<rect width="2970" height="4200" fill="url(#bg)"/>
+<circle cx="430" cy="420" r="360" fill="#86b3a6" opacity="0.12"/>
+<circle cx="2550" cy="3560" r="500" fill="#b88a54" opacity="0.10"/>
+<circle cx="2800" cy="620" r="240" fill="#4f7a72" opacity="0.08"/>
+
+<rect x="120" y="120" width="2730" height="3960" rx="64" fill="rgba(255,251,245,0.58)" stroke="rgba(125,98,71,0.14)" stroke-width="3"/>
+
+<g transform="translate(220 210)">
+  <rect x="0" y="0" width="170" height="170" rx="42" fill="url(#gold)"/>
+  <text x="85" y="112" text-anchor="middle" font-size="84" font-weight="700" fill="#fffefb" font-family="PingFang SC, Microsoft YaHei, sans-serif">医</text>
+  <text x="220" y="74" font-size="54" font-weight="700" fill="#23313b" font-family="PingFang SC, Microsoft YaHei, sans-serif">中医镜子 · 晨起健康陪伴</text>
+  <text x="220" y="146" font-size="118" font-weight="700" fill="#23313b" font-family="PingFang SC, Microsoft YaHei, sans-serif">视觉 + 语音</text>
+  <text x="220" y="258" font-size="118" font-weight="700" fill="#23313b" font-family="PingFang SC, Microsoft YaHei, sans-serif">所见即所想</text>
+  <text x="220" y="346" font-size="42" fill="#65737a" font-family="PingFang SC, Microsoft YaHei, sans-serif">早上照镜子时，拍一张脸、补一张舌象，让 AI 先看懂你的状态，再用语音把今天该做什么讲清楚。</text>
+</g>
+
+<g transform="translate(220 690)">
+  <rect x="0" y="0" width="2530" height="250" rx="42" fill="rgba(255,251,245,0.85)" stroke="rgba(125,98,71,0.12)" stroke-width="3"/>
+  <text x="70" y="88" font-size="40" font-weight="700" fill="#7d6247" font-family="PingFang SC, Microsoft YaHei, sans-serif">真实场景</text>
+  <text x="70" y="154" font-size="66" font-weight="700" fill="#23313b" font-family="PingFang SC, Microsoft YaHei, sans-serif">晨起照镜子，感觉脸色差、没精神、上火或疲惫，却说不清该怎么调。</text>
+  <text x="70" y="214" font-size="34" fill="#65737a" font-family="PingFang SC, Microsoft YaHei, sans-serif">中医镜子把“看见自己状态”自然展开成一次视觉理解、语音追问、视频行动和打卡复盘的完整体验。</text>
+</g>
+
+<g transform="translate(220 1030)">
+  <rect x="0" y="0" width="1180" height="1760" rx="54" fill="url(#darkPanel)" filter="url(#shadow)"/>
+  <text x="74" y="106" font-size="42" fill="rgba(255,254,251,0.78)" font-family="PingFang SC, Microsoft YaHei, sans-serif">产品界面预览</text>
+  <text x="74" y="182" font-size="72" font-weight="700" fill="#fffefb" font-family="PingFang SC, Microsoft YaHei, sans-serif">从看见到理解，再到行动</text>
+
+  <rect x="74" y="250" width="1032" height="396" rx="34" fill="rgba(255,254,251,0.10)" stroke="rgba(255,254,251,0.10)" stroke-width="2"/>
+  <text x="120" y="318" font-size="34" fill="rgba(255,254,251,0.74)" font-family="PingFang SC, Microsoft YaHei, sans-serif">视觉触发</text>
+  <rect x="120" y="356" width="428" height="220" rx="24" fill="rgba(255,254,251,0.08)" stroke="rgba(255,254,251,0.12)" stroke-width="2"/>
+  <rect x="568" y="356" width="428" height="220" rx="24" fill="rgba(255,254,251,0.08)" stroke="rgba(255,254,251,0.12)" stroke-width="2"/>
+  <text x="158" y="420" font-size="34" font-weight="700" fill="#fffefb" font-family="PingFang SC, Microsoft YaHei, sans-serif">面部照片</text>
+  <text x="158" y="474" font-size="28" fill="rgba(255,254,251,0.72)" font-family="PingFang SC, Microsoft YaHei, sans-serif">自然光、正视镜头</text>
+  <text x="606" y="420" font-size="34" font-weight="700" fill="#fffefb" font-family="PingFang SC, Microsoft YaHei, sans-serif">舌象照片</text>
+  <text x="606" y="474" font-size="28" fill="rgba(255,254,251,0.72)" font-family="PingFang SC, Microsoft YaHei, sans-serif">清晰聚焦、避免彩光</text>
+  <text x="120" y="614" font-size="28" fill="rgba(255,254,251,0.76)" font-family="PingFang SC, Microsoft YaHei, sans-serif">适合晨起照镜子、熬夜后、感觉状态不对时快速拍两张图。</text>
+
+  <rect x="74" y="690" width="1032" height="260" rx="34" fill="rgba(255,254,251,0.10)" stroke="rgba(255,254,251,0.10)" stroke-width="2"/>
+  <text x="120" y="756" font-size="34" fill="rgba(255,254,251,0.74)" font-family="PingFang SC, Microsoft YaHei, sans-serif">语音主路径</text>
+  <rect x="120" y="792" width="460" height="88" rx="44" fill="url(#gold)"/>
+  <text x="350" y="848" text-anchor="middle" font-size="32" font-weight="700" fill="#fffefb" font-family="PingFang SC, Microsoft YaHei, sans-serif">直接说：我今天该怎么调</text>
+  <text x="120" y="920" font-size="28" fill="rgba(255,254,251,0.76)" font-family="PingFang SC, Microsoft YaHei, sans-serif">不想打字时，用户可以直接开口问动作、饮食或今晚安排。</text>
+
+  <rect x="74" y="994" width="1032" height="306" rx="34" fill="rgba(255,254,251,0.10)" stroke="rgba(255,254,251,0.10)" stroke-width="2"/>
+  <text x="120" y="1060" font-size="34" fill="rgba(255,254,251,0.74)" font-family="PingFang SC, Microsoft YaHei, sans-serif">今日行动建议</text>
+  <text x="120" y="1138" font-size="52" font-weight="700" fill="#fffefb" font-family="PingFang SC, Microsoft YaHei, sans-serif">先做「补气养元操」</text>
+  <text x="120" y="1202" font-size="30" fill="rgba(255,254,251,0.76)" font-family="PingFang SC, Microsoft YaHei, sans-serif">AI 会直接告诉用户今天最值得马上做的一件事，并解释为什么推荐这条。</text>
+  <rect x="120" y="1234" width="360" height="34" rx="17" fill="rgba(255,254,251,0.16)"/>
+  <rect x="120" y="1234" width="248" height="34" rx="17" fill="url(#jade)"/>
+  <text x="510" y="1260" font-size="28" fill="rgba(255,254,251,0.78)" font-family="PingFang SC, Microsoft YaHei, sans-serif">今日已完成 1 次行动</text>
+
+  <rect x="74" y="1344" width="1032" height="342" rx="34" fill="rgba(255,254,251,0.10)" stroke="rgba(255,254,251,0.10)" stroke-width="2"/>
+  <text x="120" y="1410" font-size="34" fill="rgba(255,254,251,0.74)" font-family="PingFang SC, Microsoft YaHei, sans-serif">视频陪伴</text>
+  <rect x="120" y="1450" width="298" height="176" rx="24" fill="url(#jade)"/>
+  <rect x="444" y="1450" width="298" height="176" rx="24" fill="url(#gold)"/>
+  <rect x="768" y="1450" width="298" height="176" rx="24" fill="#6f7d64"/>
+  <text x="150" y="1520" font-size="26" fill="#fffefb" font-family="PingFang SC, Microsoft YaHei, sans-serif">清爽舒展八段锦</text>
+  <text x="474" y="1520" font-size="26" fill="#fffefb" font-family="PingFang SC, Microsoft YaHei, sans-serif">黄芪山药小炖盅</text>
+  <text x="798" y="1520" font-size="26" fill="#fffefb" font-family="PingFang SC, Microsoft YaHei, sans-serif">午间提气呼吸法</text>
+  <text x="120" y="1668" font-size="28" fill="rgba(255,254,251,0.76)" font-family="PingFang SC, Microsoft YaHei, sans-serif">点击视频后进入倒计时、模拟播放、动作跟随、完成反馈和打卡闭环。</text>
+</g>
+
+<g transform="translate(1450 1030)">
+  <text x="0" y="72" font-size="48" font-weight="700" fill="#7d6247" font-family="PingFang SC, Microsoft YaHei, sans-serif">Demo 讲述路径</text>
+  <text x="0" y="154" font-size="94" font-weight="700" fill="#23313b" font-family="PingFang SC, Microsoft YaHei, sans-serif">评委能一眼看懂的 4 步</text>
+
+  <g transform="translate(0 250)">
+    <rect x="0" y="0" width="1300" height="194" rx="38" fill="rgba(255,251,245,0.90)" stroke="rgba(125,98,71,0.12)" stroke-width="3"/>
+    <circle cx="84" cy="97" r="34" fill="url(#gold)"/>
+    <text x="84" y="111" text-anchor="middle" font-size="30" font-weight="700" fill="#fffefb" font-family="PingFang SC, Microsoft YaHei, sans-serif">1</text>
+    <text x="152" y="84" font-size="48" font-weight="700" fill="#23313b" font-family="PingFang SC, Microsoft YaHei, sans-serif">看见状态</text>
+    <text x="152" y="138" font-size="30" fill="#65737a" font-family="PingFang SC, Microsoft YaHei, sans-serif">用户本来就在照镜子，视觉触发自然，不需要先填长问卷。</text>
+  </g>
+
+  <g transform="translate(0 480)">
+    <rect x="0" y="0" width="1300" height="194" rx="38" fill="rgba(255,251,245,0.90)" stroke="rgba(125,98,71,0.12)" stroke-width="3"/>
+    <circle cx="84" cy="97" r="34" fill="url(#gold)"/>
+    <text x="84" y="111" text-anchor="middle" font-size="30" font-weight="700" fill="#fffefb" font-family="PingFang SC, Microsoft YaHei, sans-serif">2</text>
+    <text x="152" y="84" font-size="48" font-weight="700" fill="#23313b" font-family="PingFang SC, Microsoft YaHei, sans-serif">视觉理解</text>
+    <text x="152" y="138" font-size="30" fill="#65737a" font-family="PingFang SC, Microsoft YaHei, sans-serif">面部看气色和神采，舌象看舌色、舌苔、津液，先分别解释，再联合归纳。</text>
+  </g>
+
+  <g transform="translate(0 710)">
+    <rect x="0" y="0" width="1300" height="194" rx="38" fill="rgba(255,251,245,0.90)" stroke="rgba(125,98,71,0.12)" stroke-width="3"/>
+    <circle cx="84" cy="97" r="34" fill="url(#gold)"/>
+    <text x="84" y="111" text-anchor="middle" font-size="30" font-weight="700" fill="#fffefb" font-family="PingFang SC, Microsoft YaHei, sans-serif">3</text>
+    <text x="152" y="84" font-size="48" font-weight="700" fill="#23313b" font-family="PingFang SC, Microsoft YaHei, sans-serif">语音展开</text>
+    <text x="152" y="138" font-size="30" fill="#65737a" font-family="PingFang SC, Microsoft YaHei, sans-serif">用户直接说“我今天该怎么调”，AI 不只是给判断，而是把建议讲出来。</text>
+  </g>
+
+  <g transform="translate(0 940)">
+    <rect x="0" y="0" width="1300" height="194" rx="38" fill="rgba(255,251,245,0.90)" stroke="rgba(125,98,71,0.12)" stroke-width="3"/>
+    <circle cx="84" cy="97" r="34" fill="url(#gold)"/>
+    <text x="84" y="111" text-anchor="middle" font-size="30" font-weight="700" fill="#fffefb" font-family="PingFang SC, Microsoft YaHei, sans-serif">4</text>
+    <text x="152" y="84" font-size="48" font-weight="700" fill="#23313b" font-family="PingFang SC, Microsoft YaHei, sans-serif">开始行动</text>
+    <text x="152" y="138" font-size="30" fill="#65737a" font-family="PingFang SC, Microsoft YaHei, sans-serif">推荐视频、跟练、打卡、继续追问，形成“看见 - 理解 - 探索”的体验闭环。</text>
+  </g>
+
+  <g transform="translate(0 1260)">
+    <text x="0" y="72" font-size="48" font-weight="700" fill="#7d6247" font-family="PingFang SC, Microsoft YaHei, sans-serif">为什么它适合赛道四</text>
+    <rect x="0" y="112" width="1300" height="710" rx="42" fill="rgba(255,251,245,0.88)" stroke="rgba(125,98,71,0.12)" stroke-width="3"/>
+    <text x="62" y="204" font-size="40" font-weight="700" fill="#23313b" font-family="PingFang SC, Microsoft YaHei, sans-serif">场景与问题洞察</text>
+    <text x="62" y="256" font-size="28" fill="#65737a" font-family="PingFang SC, Microsoft YaHei, sans-serif">从晨起照镜子这个极自然的生活动作切入，而不是生造一个“为了识别而识别”的场景。</text>
+    <text x="62" y="344" font-size="40" font-weight="700" fill="#23313b" font-family="PingFang SC, Microsoft YaHei, sans-serif">AI 能力与产品结合</text>
+    <text x="62" y="396" font-size="28" fill="#65737a" font-family="PingFang SC, Microsoft YaHei, sans-serif">视觉负责发现线索，语音负责把线索变成可执行建议，视频负责把建议变成行动。</text>
+    <text x="62" y="484" font-size="40" font-weight="700" fill="#23313b" font-family="PingFang SC, Microsoft YaHei, sans-serif">体验完整性</text>
+    <text x="62" y="536" font-size="28" fill="#65737a" font-family="PingFang SC, Microsoft YaHei, sans-serif">不是拍照看报告就结束，而是继续追问、跟练、打卡，再回到结果页做第二轮探索。</text>
+    <text x="62" y="624" font-size="40" font-weight="700" fill="#23313b" font-family="PingFang SC, Microsoft YaHei, sans-serif">用户价值感</text>
+    <text x="62" y="676" font-size="28" fill="#65737a" font-family="PingFang SC, Microsoft YaHei, sans-serif">用户得到的不是抽象标签，而是“今天现在就能做什么”的即时帮助和持续陪伴。</text>
+    <text x="62" y="764" font-size="40" font-weight="700" fill="#23313b" font-family="PingFang SC, Microsoft YaHei, sans-serif">创新性与延展潜力</text>
+    <text x="62" y="816" font-size="28" fill="#65737a" font-family="PingFang SC, Microsoft YaHei, sans-serif">视觉触发、语音追问、行动闭环可扩展到节气调养、熬夜恢复、办公室亚健康等更多场景。</text>
+  </g>
+
+  <g transform="translate(0 2180)">
+    <rect x="0" y="0" width="1300" height="490" rx="42" fill="url(#gold)"/>
+    <text x="66" y="92" font-size="42" fill="rgba(255,254,251,0.80)" font-family="PingFang SC, Microsoft YaHei, sans-serif">一句话总结</text>
+    <text x="66" y="186" font-size="74" font-weight="700" fill="#fffefb" font-family="PingFang SC, Microsoft YaHei, sans-serif">不是让用户拍照看报告，</text>
+    <text x="66" y="286" font-size="74" font-weight="700" fill="#fffefb" font-family="PingFang SC, Microsoft YaHei, sans-serif">而是把“看见自己的状态”</text>
+    <text x="66" y="386" font-size="74" font-weight="700" fill="#fffefb" font-family="PingFang SC, Microsoft YaHei, sans-serif">变成一次可继续展开的健康对话。</text>
+  </g>
+</g>
+
+<g transform="translate(220 2920)">
+  <text x="0" y="72" font-size="48" font-weight="700" fill="#7d6247" font-family="PingFang SC, Microsoft YaHei, sans-serif">路演时可以直接这样讲</text>
+  <rect x="0" y="120" width="2530" height="720" rx="48" fill="rgba(255,251,245,0.88)" stroke="rgba(125,98,71,0.12)" stroke-width="3"/>
+  <text x="70" y="224" font-size="54" font-weight="700" fill="#23313b" font-family="PingFang SC, Microsoft YaHei, sans-serif">“用户早上照镜子时，感觉状态不对，但说不上来。”</text>
+  <text x="70" y="322" font-size="40" fill="#65737a" font-family="PingFang SC, Microsoft YaHei, sans-serif">“中医镜子先用面部和舌象做视觉理解，再让用户直接开口问：我今天该怎么调。”</text>
+  <text x="70" y="420" font-size="40" fill="#65737a" font-family="PingFang SC, Microsoft YaHei, sans-serif">“AI 不只输出结论，而是给出一个今天最值得先做的动作或饮食选择，并带用户完成跟练和打卡。”</text>
+  <text x="70" y="518" font-size="40" fill="#65737a" font-family="PingFang SC, Microsoft YaHei, sans-serif">“所以这个作品真正展示的是：视觉让 AI 看懂我，语音让 AI 跟我说清楚，行动闭环让 AI 陪我做完。”</text>
+  <text x="70" y="650" font-size="34" fill="#7d6247" font-family="PingFang SC, Microsoft YaHei, sans-serif">关键词：视觉触发 / 语音展开 / 行动建议 / 视频陪伴 / 打卡闭环</text>
+</g>
+
+<g transform="translate(220 3860)">
+  <rect x="0" y="0" width="2530" height="140" rx="32" fill="rgba(35,49,59,0.92)"/>
+  <text x="70" y="88" font-size="34" fill="rgba(255,254,251,0.82)" font-family="PingFang SC, Microsoft YaHei, sans-serif">中医镜子 · 赛道四展示海报 | A3 比例 297:420 | 视觉 + 语音，让“所见”自然延展成“所想”与“所做”</text>
+</g>
+</svg>

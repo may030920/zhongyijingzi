@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中医镜子 Agent</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar panel">
+      <div class="brand-block">
+        <div class="brand-mark">医</div>
+        <div>
+          <h1>中医镜子 · 晨起健康陪伴</h1>
+          <p>早上照镜子时，拍一张脸、补一张舌象，让 Agent 先看懂你的状态，再用语音把今天该做什么讲清楚。</p>
+        </div>
+      </div>
+
+      <section class="upload-card">
+        <div class="section-head">
+          <h2>视觉触发</h2>
+          <span id="imageStatus" class="status-pill">未上传</span>
+        </div>
+        <div class="scene-note">适合晨起照镜子、熬夜后、感觉上火或没精神时快速拍两张图，让 AI 从“看见”进入“理解”。</div>
+
+        <div class="upload-grid">
+          <div class="upload-column">
+            <div class="mini-head">
+              <strong>面部照片</strong>
+              <span id="faceStatus" class="sub-note">缺失</span>
+            </div>
+            <label class="upload-zone" for="faceImageInput">
+              <img id="facePreviewImage" class="preview-image hidden" alt="面部预览">
+              <div id="facePreviewPlaceholder" class="preview-placeholder">
+                <strong>上传正脸照片</strong>
+                <span>建议自然光、正视镜头、避免过强滤镜。</span>
+              </div>
+            </label>
+            <input id="faceImageInput" type="file" accept="image/*" capture="user" hidden>
+            <div class="button-row compact-row">
+              <label class="primary-btn" for="faceImageInput">上传面部</label>
+              <button id="clearFaceBtn" class="ghost-btn" type="button">清空</button>
+            </div>
+          </div>
+
+          <div class="upload-column">
+            <div class="mini-head">
+              <strong>舌象照片</strong>
+              <span id="tongueStatus" class="sub-note">缺失</span>
+            </div>
+            <label class="upload-zone" for="tongueImageInput">
+              <img id="tonguePreviewImage" class="preview-image hidden" alt="舌象预览">
+              <div id="tonguePreviewPlaceholder" class="preview-placeholder">
+                <strong>上传舌象照片</strong>
+                <span>建议伸舌自然、清晰聚焦、避免彩色光源。</span>
+              </div>
+            </label>
+            <input id="tongueImageInput" type="file" accept="image/*" capture="environment" hidden>
+            <div class="button-row compact-row">
+              <label class="primary-btn" for="tongueImageInput">上传舌象</label>
+              <button id="clearTongueBtn" class="ghost-btn" type="button">清空</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="knowledge-card hidden">
+        <div class="section-head">
+          <h2>知识库</h2>
+          <span class="sub-note">规则辅助</span>
+        </div>
+        <div id="knowledgeSummary" class="result-summary">将结合《黄帝内经》相关望色、望神、辨寒热思路，以及舌色、舌苔、津液等规则辅助判读。</div>
+        <div id="knowledgeReferences" class="result-cards"></div>
+      </section>
+
+      <section class="quick-card">
+        <div class="section-head">
+          <h2>探索路径</h2>
+          <span class="sub-note">从看见到行动</span>
+        </div>
+        <div id="quickPrompts" class="chip-row">
+          <button class="chip" type="button" data-prompt="请先做一轮联合初判，分别说明面部图和舌象图给了你什么线索。">联合初判</button>
+          <button class="chip" type="button" data-prompt="请重点解释面部气色和神采判断依据。">重点看面部</button>
+          <button class="chip" type="button" data-prompt="请重点解释舌色、舌苔和津液线索。">重点看舌象</button>
+          <button class="chip" type="button" data-prompt="结合两张图，给我今天最适合马上执行的一件事。">今日行动</button>
+          <button class="chip" type="button" data-prompt="我刚起床感觉状态不对，请直接告诉我今天该怎么调。">场景问法</button>
+        </div>
+      </section>
+
+      <section class="trace-card hidden">
+        <div class="section-head">
+          <h2>Agent 状态</h2>
+          <span id="runtimeModeTag" class="sub-note">Mock</span>
+        </div>
+        <ul id="stageList" class="stage-list"></ul>
+      </section>
+
+      <section class="result-card panel-sub">
+        <div class="section-head">
+          <h2>联合理解</h2>
+          <span class="sub-note">从看见到理解</span>
+        </div>
+        <div id="resultSummary" class="result-summary empty">上传面部图和舌象图后，Agent 会分别分析并输出联合判断。</div>
+        <div id="resultCards" class="result-cards"></div>
+      </section>
+
+      <section class="action-card panel-sub">
+        <div class="section-head">
+          <h2>今日行动建议</h2>
+          <span id="actionStatusBadge" class="status-pill">待生成</span>
+        </div>
+        <div id="actionSummary" class="result-summary empty">完成一轮联合分析后，这里会优先告诉你今天最值得马上做的一件事，并说明为什么这样推荐。</div>
+        <div id="actionChecklist" class="result-cards"></div>
+      </section>
+
+      <section class="video-card panel-sub">
+        <div class="section-head">
+          <h2>视频陪伴</h2>
+          <span id="checkinStatusBadge" class="status-pill">未开始</span>
+        </div>
+        <div id="videoSummary" class="result-summary empty">完成一轮联合分析后，这里会按体质倾向推荐饮食和运动视频，并支持跟练打卡。</div>
+        <div id="videoRecommendations" class="video-recommendations"></div>
+      </section>
+    </aside>
+
+    <main class="main panel">
+      <header class="main-header">
+        <div>
+          <h2>视觉 + 语音对话台</h2>
+          <p>先用双图让 Agent 看懂状态，再直接开口问“我今天该怎么调”，让分析自然展开成行动建议与陪伴式练习。</p>
+          <div class="proxy-status-line">
+            <span class="sub-note">代理连接</span>
+            <span id="proxyStatusBadge" class="status-pill">未检测</span>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="toggleSettingsBtn" class="ghost-btn" type="button">Agent 设置</button>
+          <button id="resetChatBtn" class="ghost-btn" type="button">清空对话</button>
+        </div>
+      </header>
+
+      <section class="voice-launcher">
+        <div>
+          <strong>不想打字时，直接说：</strong>
+          <p>“我今天该怎么调？”“给我一个现在就能做的动作。”“帮我用语音讲一遍今天的饮食建议。”</p>
+        </div>
+        <div class="button-row">
+          <button id="startVoiceGuideBtn" class="primary-btn" type="button">直接说：我今天该怎么调</button>
+          <button class="ghost-btn" type="button" data-voice-fill="给我一个现在就能做的动作。">填入动作问法</button>
+        </div>
+      </section>
+
+      <section class="demo-flow">
+        <div class="flow-step">
+          <span>1</span>
+          <strong>看见状态</strong>
+          <p>晨起照镜子，发现脸色或精神不对。</p>
+        </div>
+        <div class="flow-step">
+          <span>2</span>
+          <strong>视觉理解</strong>
+          <p>上传面部与舌象，AI 做联合判断。</p>
+        </div>
+        <div class="flow-step">
+          <span>3</span>
+          <strong>语音展开</strong>
+          <p>直接问“我今天该怎么调”。</p>
+        </div>
+        <div class="flow-step">
+          <span>4</span>
+          <strong>开始行动</strong>
+          <p>进入推荐视频，完成跟练和打卡。</p>
+        </div>
+      </section>
+
+      <section id="settingsPanel" class="settings-panel hidden">
+        <div class="settings-grid">
+          <label>
+            <span>运行模式</span>
+            <select id="modeSelect">
+              <option value="mock">Mock Agent</option>
+              <option value="proxy">Proxy Agent</option>
+              <option value="remote">Remote Agent</option>
+            </select>
+          </label>
+          <label>
+            <span>Provider</span>
+            <select id="providerSelect">
+              <option value="proxy-openai">Proxy OpenAI Compatible</option>
+              <option value="openai-compatible">OpenAI Compatible</option>
+              <option value="custom-json">Custom JSON Endpoint</option>
+            </select>
+          </label>
+          <label>
+            <span>模型名称</span>
+            <input id="modelInput" type="text" placeholder="gpt-4.1-mini">
+          </label>
+          <label>
+            <span>温度</span>
+            <input id="temperatureInput" type="number" step="0.1" min="0" max="1.5">
+          </label>
+          <label class="wide-field">
+            <span>接口地址 / 代理地址</span>
+            <input id="endpointInput" type="text" placeholder="/api/agent 或 https://api.openai.com/v1/chat/completions">
+          </label>
+          <label class="wide-field">
+            <span>API Key</span>
+            <input id="apiKeyInput" type="password" placeholder="sk-...">
+          </label>
+        </div>
+        <div class="button-row">
+          <button id="saveSettingsBtn" class="primary-btn" type="button">保存设置</button>
+          <button id="testBackendBtn" class="ghost-btn" type="button">连接测试</button>
+          <span id="backendStatus" class="sub-note">推荐使用 Proxy Agent，经由本地 server.py 连接真实 OpenAI 兼容后端。</span>
+        </div>
+      </section>
+
+      <section id="messages" class="messages"></section>
+
+      <section class="suggestion-bar">
+        <div class="section-head compact">
+          <h3>继续追问</h3>
+          <span class="sub-note">Agent 会记住视觉结果与打卡上下文</span>
+        </div>
+        <div id="suggestionRow" class="chip-row"></div>
+      </section>
+
+      <footer class="composer">
+        <textarea id="userInput" rows="3" placeholder="例如：我今天刚起床感觉状态不对，你先结合面部和舌象告诉我今天该怎么调；或者直接按语音按钮开口问。"></textarea>
+        <div class="composer-actions">
+          <button id="micBtn" class="ghost-btn" type="button">语音提问</button>
+          <button id="speakBtn" class="ghost-btn" type="button">播报建议</button>
+          <button id="sendBtn" class="primary-btn" type="button">发送给 Agent</button>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <section id="companionPlayer" class="companion-player hidden" aria-hidden="true">
+    <div class="player-shell">
+      <header class="player-header">
+        <div>
+          <span class="player-kicker">中医镜子 · 陪伴模式</span>
+          <h3 id="playerTitle">跟练视频</h3>
+          <p id="playerMeta" class="sub-note">准备开始后进入倒计时与模拟跟练。</p>
+        </div>
+        <button id="closePlayerBtn" class="ghost-btn" type="button">退出</button>
+      </header>
+
+      <div id="playerCover" class="player-cover">
+        <div class="player-cover-mask">
+          <span id="playerCategoryTag" class="player-tag">运动类</span>
+          <strong id="playerPhaseLabel">准备开始</strong>
+          <span id="playerCountdownText">点击下方按钮后开始 3 秒倒计时。</span>
+        </div>
+      </div>
+
+      <div class="player-body">
+        <div id="playerQueueDots" class="player-queue-dots"></div>
+
+        <div class="player-metrics">
+          <div class="metric-card">
+            <div class="metric-head">
+              <span>播放进度</span>
+              <strong id="videoProgressText">0%</strong>
+            </div>
+            <div class="progress-track">
+              <div id="videoProgressBar" class="progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-head">
+              <span>动作跟随</span>
+              <strong id="followProgressText">待开始</strong>
+            </div>
+            <div class="progress-track warm">
+              <div id="followProgressBar" class="progress-fill"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="player-feedback">
+          <p id="playerFeedback">先看完本轮体质推荐，再点“准备开始”进入陪伴模式。</p>
+          <p id="playerTip" class="sub-note">支持竖屏手势：上滑切换推荐，下滑退出播放。</p>
+        </div>
+
+        <div class="button-row">
+          <button id="playerPrimaryBtn" class="primary-btn" type="button">准备开始</button>
+          <button id="switchVideoBtn" class="ghost-btn" type="button">切换推荐</button>
+          <button id="completeCheckinBtn" class="ghost-btn hidden" type="button">打卡完成</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="./config.js"></script>
+  <script src="./knowledge.js"></script>
+  <script src="./agent.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
